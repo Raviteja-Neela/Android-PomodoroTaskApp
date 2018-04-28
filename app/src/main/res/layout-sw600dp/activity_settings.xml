@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context="com.example.ravit.pomodorotaskapp.SettingsActivity">
+
+    <TableRow>
+        <TextView
+            android:id="@+id/focusedtv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Focused Time Length"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
+
+        <Spinner
+            android:id="@+id/focused"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp" />
+
+
+    </TableRow>
+
+
+    <TableRow>
+    <TextView
+        android:id="@+id/sbreaktv"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Short Break Length"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+
+        <Spinner
+            android:id="@+id/sbreak"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/lbreaktv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Long Break Length"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
+
+        <Spinner
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/lbreak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </TableRow>
+
+</TableLayout>

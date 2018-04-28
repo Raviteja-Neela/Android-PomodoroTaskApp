@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <ListPreference
+            android:key="PREF_FOCUS"
+            android:title="Focused Length"
+            android:entries="@array/focused_entries"
+            android:entryValues="@array/focused_values" />
+
+        <ListPreference
+            android:key="PREF_SBREAK"
+            android:title="Short Break Length"
+            android:entries="@array/sbreak_entries"
+            android:entryValues="@array/sbreak_values" />
+
+
+        <ListPreference
+            android:key="PREF_LBREAK"
+            android:title="Long Break Length"
+            android:entries="@array/lbreak_entries"
+            android:entryValues="@array/lbreak_values" />
+
+
+        <ListPreference
+            android:key="PREF_BLOCK"
+            android:title="Maximum number of hours to work per day"
+            android:entries="@array/block_entries"
+            android:entryValues="@array/block_values"
+
+            />
+
+</PreferenceScreen>

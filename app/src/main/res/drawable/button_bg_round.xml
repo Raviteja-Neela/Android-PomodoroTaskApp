@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+            android:src="@drawable/settingsimg1"
+            android:gravity="center" />
+
+        <shape android:shape="oval">
+            <stroke android:color="#000000" android:width="1dp" />
+            <solid android:color="#000000"/>
+            <size android:width="150dp" android:height="150dp"/>
+        </shape>
+        </item>
+</selector>
