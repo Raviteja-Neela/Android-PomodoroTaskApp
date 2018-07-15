@@ -60,7 +60,7 @@
             android:layout_gravity="left"
             android:text="00:00"
             android:layout_marginLeft="125dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
 
             />
 
@@ -71,7 +71,7 @@
             android:layout_gravity="center"
             android:text="00:00"
             android:layout_marginLeft="35dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             />
 
         <TextView
@@ -81,7 +81,7 @@
             android:layout_gravity="right"
             android:layout_marginLeft="35dp"
             android:text="00:00"
-            android:textSize="15dp"
+            android:textSize="20dp"
             />
 
     </LinearLayout>

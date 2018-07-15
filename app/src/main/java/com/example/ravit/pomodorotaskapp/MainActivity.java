@@ -122,10 +122,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         sharedPreferences1 = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-        prefList1 = sharedPreferences1.getString("PREF_FOCUS", "no selection");
-        prefList2 = sharedPreferences1.getString("PREF_SBREAK", "no selection");
-        prefList3 = sharedPreferences1.getString("PREF_LBREAK", "no selection");
-        prefList4 = sharedPreferences1.getString("PREF_BLOCK","no selection");
+        prefList1 = sharedPreferences1.getString("PREF_FOCUS", "25");
+        prefList2 = sharedPreferences1.getString("PREF_SBREAK", "5");
+        prefList3 = sharedPreferences1.getString("PREF_LBREAK", "20");
+        prefList4 = sharedPreferences1.getString("PREF_BLOCK","8");
 
 
 
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                     what.setText("Set Tag");
                     work.setTag(R.drawable.laptopb);
                     msg.setText("Start focused work");
-                    prefList1 = sharedPreferences1.getString("PREF_FOCUS", "no selection");
+                    prefList1 = sharedPreferences1.getString("PREF_FOCUS", "25");
                     time1.setText(prefList1.toString() + ":00");
                     timer=prefList1.toString();
                     intent_msg="work";
@@ -342,28 +342,31 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor=sharedPreferences.edit();
 
 
-        prefList1 = sharedPreferences.getString("PREF_FOCUS", "no selection");
+        prefList1 = sharedPreferences.getString("PREF_FOCUS", "25");
         focus_time=prefList1.toString()+" mins";
 
-        prefList2 = sharedPreferences.getString("PREF_SBREAK", "no selection");
+        prefList2 = sharedPreferences.getString("PREF_SBREAK", "05");
         sbreak_time=prefList2.toString()+" mins";
 
-        prefList3 = sharedPreferences.getString("PREF_LBREAK", "no selection");
+        prefList3 = sharedPreferences.getString("PREF_LBREAK", "20");
         lbreak_time=prefList3.toString()+" mins";
 
         focustv.setText(focus_time);
         if (work_flag == true)
         {
             time1.setText(prefList1.toString() + ":00");
+            timer=prefList1.toString();
         }
         else if (sbreak_flag == true)
         {
             time1.setText(prefList2.toString() + ":00");
+            timer=prefList2.toString();
 
         }
         else if (lbreak_flag == true)
         {
               time1.setText(prefList3.toString() + ":00");
+            timer=prefList3.toString();
         }
 
         sbreaktv.setText(sbreak_time);
@@ -386,7 +389,7 @@ public class MainActivity extends AppCompatActivity {
 
                           taskstatus = "yes";
                           insertData();
-                          Toast.makeText(MainActivity.this,"Task status is "+taskstatus,Toast.LENGTH_LONG).show();
+                      //    Toast.makeText(MainActivity.this,"Task status is "+taskstatus,Toast.LENGTH_LONG).show();
                       }
                   });
 
@@ -493,11 +496,11 @@ public class MainActivity extends AppCompatActivity {
     public void insertData() {
 
         final MyDataBase mdb=new MyDataBase(getApplicationContext(), DATABASENAME, null, DATABASEVERSION);
-        Toast.makeText(getApplicationContext()," Value of today:" +today,Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext()," Value of label:" +txt,Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext()," Value of focus_time:" +worktime,Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext()," Value of task status:" +taskstatus,Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext()," Value of work hours:" + block_hours,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext()," Value of today:" +today,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext()," Value of label:" +txt,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext()," Value of focus_time:" +worktime,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext()," Value of task status:" +taskstatus,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext()," Value of work hours:" + block_hours,Toast.LENGTH_LONG).show();
 
         //today refers to DATE on which the focus session is used
         //txt is used to refer label for the session. for ex: work, gym etc
@@ -505,7 +508,7 @@ public class MainActivity extends AppCompatActivity {
         //block_hours refers to the max number of hours working per day
 
         if ( today !=null && txt != null && focus_time != null && (taskstatus == "yes" || taskstatus == "no" || taskstatus=="Short Break" || taskstatus=="Long Break" )) {
-            Toast.makeText(getApplicationContext(), "Task values are:" + today + " "+txt + " "+ worktime+" "+ taskstatus +" "+ block_hours, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Task values are:" + today + " "+txt + " "+ worktime+" "+ taskstatus +" "+ block_hours, Toast.LENGTH_LONG).show();
             boolean isInserted = mdb.insertData(today,txt,worktime,taskstatus,block_hours);
             if (isInserted == true)
             {
